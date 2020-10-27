@@ -11,3 +11,87 @@ searching algorithms:
         STEP 3: Jump from index 8 to index 12;
         STEP 4: Since the element at index 12 is greater than 55 we will jump back a step to come to index 8.
         STEP 5: Perform linear search from index 8 to get the element 55.
+* Interpolation search
+    // The idea of formula is to return higher value of pos
+    // when element to be searched is closer to arr[hi]. And
+    // smaller value when closer to arr[lo]
+    pos = lo + [ (x-arr[lo])*(hi-lo) / (arr[hi]-arr[Lo]) ]
+
+    arr[] ==> Array where elements need to be searched
+    x     ==> Element to be searched
+    lo    ==> Starting index in arr[]
+    hi    ==> Ending index in arr[]
+    Algorithm
+    Rest of the Interpolation algorithm is the same except the above partition logic.
+
+    Step1: In a loop, calculate the value of “pos” using the probe position formula.
+    Step2: If it is a match, return the index of the item, and exit.
+    Step3: If the item is less than arr[pos], calculate the probe position of the left sub-array. Otherwise calculate the same in the right sub-array.
+    Step4: Repeat until a match is found or the sub-array reduces to zero
+* exponential search
+* Ternary search
+
+// over all my conclusion is Binary search is better
+
+sorting algorithms:
+* Selection sort
+* bubble sort
+* insertion sort
+* merge sort
+
+selection sort implementation:
+---------------------------------
+arr[] = 64 25 12 22 11
+
+// Find the minimum element in arr[0...4]
+// and place it at beginning
+11 25 12 22 64
+
+// Find the minimum element in arr[1...4]
+// and place it at beginning of arr[1...4]
+11 12 25 22 64
+
+// Find the minimum element in arr[2...4]
+// and place it at beginning of arr[2...4]
+11 12 22 25 64
+
+// Find the minimum element in arr[3...4]
+// and place it at beginning of arr[3...4]
+11 12 22 25 64
+
+Bubble sort implementation
+----------------------------------------
+Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
+Example:
+First Pass:
+( 5 1 4 2 8 ) –> ( 1 5 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1.
+( 1 5 4 2 8 ) –>  ( 1 4 5 2 8 ), Swap since 5 > 4
+( 1 4 5 2 8 ) –>  ( 1 4 2 5 8 ), Swap since 5 > 2
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ), Now, since these elements are already in order (8 > 5), algorithm does not swap them.
+
+Second Pass:
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 )
+( 1 4 2 5 8 ) –> ( 1 2 4 5 8 ), Swap since 4 > 2
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 4 5 8 ) –>  ( 1 2 4 5 8 )
+Now, the array is already sorted, but our algorithm does not know if it is completed. The algorithm needs one whole pass without any swap to know it is sorted.
+
+Third Pass:
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
+
+Insertion sort
+---------------
+To sort an array of size n in ascending order:
+1: Iterate from arr[1] to arr[n] over the array.
+2: Compare the current element (key) to its predecessor.
+3: If the key element is smaller than its predecessor, compare it to the elements before.
+   Move the greater elements one position up to make space for the swapped element.
+
+Merge sort
+---------------
+It divides the input array into two halves, calls itself for the two halves, and then merges the two sorted halves.
+The merge() function is used for merging two halves.
+The merge(arr, l, m, r) is a key process that assumes that arr[l..m] and arr[m+1..r] are sorted and merges the two sorted sub-arrays into one.
