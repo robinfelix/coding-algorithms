@@ -1,7 +1,7 @@
 arr = [12, 11, 13, 5, 6, 7]
 
 def merge_divide(arr):
-    # print(arr)
+    print(arr)
     left, right = [],[]
     mid = int(len(arr)/2)
     if len(arr) > 1:
@@ -29,7 +29,7 @@ def merge_divide(arr):
             arr[k] = right[j]
             j += 1
             k += 1
-    print(arr)
+    # print(arr)
     # return left,right
 
 # def merge_sort(arr):

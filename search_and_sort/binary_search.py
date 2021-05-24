@@ -34,3 +34,22 @@ def bin_search(arr, x):
 
 
 print("index",bin_search(arr,x))
+
+
+class Solution:
+    def finalPrices(self, prices: List[int]) -> List[int]:
+        output = []
+        for i in range(len(prices)):
+            ite = False
+            for j in range(i + 1, len(prices)):
+                if prices[i] >= prices[j]:
+                    d_price = prices[i] - prices[j]
+                    output.append(d_price)
+                    ite = True
+                    break
+                else:
+                    ite = False
+            if not ite:
+                output.append(prices[i])
+
+        return output

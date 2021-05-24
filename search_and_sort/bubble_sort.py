@@ -8,7 +8,8 @@ def inefficient_buuble(arr):
                 print(arr)
     return  arr
 
-arr1 = [5,3,1,9,8,2,4,7]
+# arr1 = [5,3,1,9,8,2,4,7]
+arr1 = [1,2,3]
 
 def efficient_bubble(arr):
     print("Efficient bubble sort bcz the iteration stops once the list is sorted")
@@ -16,14 +17,14 @@ def efficient_bubble(arr):
     while not sorted:
         sorted = True
         for i in range(len(arr)-1):
-            if arr[i] > arr[i+1]:
+            if arr[i] > arr[i+1]: # < means desending
                 sorted = False
                 arr[i] ,arr[i+1] = arr[i+1], arr[i]
                 print (arr)
     return arr
 
-inefficient_buuble(arr)
-efficient_bubble(arr1)
+# inefficient_buuble(arr)
+print (efficient_bubble(arr1))
 
 '''
 reference :
